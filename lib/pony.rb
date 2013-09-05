@@ -174,6 +174,7 @@ module Pony
   def self.build_mail(options)
     mail = Mail.new do
       to options[:to]
+      smtp_envelope_to options[:smtp_envelope_to]
       from options[:from] || 'pony@unknown'
       cc options[:cc]
       reply_to options[:reply_to]
